@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php wp_head(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Dolphin</title>
 <meta name="keywords" content=""/>
@@ -204,7 +205,8 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-3"> <img src="<?php bloginfo ('template_directory') ?>/images/logo.png" class="img-fluid"></div>
+		<?php $logo=get_header_image(); ?>
+      <div class="col-lg-3"> <a href="<?php echo site_url(); ?>"><img src="<?php echo $logo; ?>" class="img-fluid"></a></div>
       <div class="col-lg-9">
         <div align="right" style="margin-top:10px"> 
           <a href="#" class="btn btn-online">Online Payment</a> <a href="#" class="btn btn-admission"><span class="blink2">Admission Open for 2019-20 Session</span></a> 

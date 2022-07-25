@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <!--welcome-->
 <section style=" padding:50px">
   <div class="container">
@@ -7,12 +6,25 @@
       <div class="col-lg-8">
         <div class="title">
           <h1> <a href="<?php echo site_url(); ?>">Home</a> / <?php the_title(); ?> <span style="color:#990000">Dolphin Institute</span></h1>
-          <hr>
+          <div class="row">
           <br>
-          <?php the_post_thumbnail(array(500, 500)); ?>
-          <?php the_content(); ?>
- 
-        </div>
+         
+            <div class="col-lg-12"> 
+              <?php $img= wp_get_attachment_image_src(get_post_thumbnail_id(),'large') ?>           
+                <img class="img-fluid" src="<?php echo $img[0]?>"/>
+               
+                <p><?php echo get_the_date(); ?></p>
+                <h2><?php the_title(); ?> </h2> 
+                <p><?php the_content() ?>
+                <?php comments_template();  ?>
+                
+              
+               
+            </div>
+            
+          </div>
+        
+          </div>
       </div>
       <div class="col-lg-4">
         <div class="upcoming-event-outer">
